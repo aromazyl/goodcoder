@@ -4,7 +4,13 @@
 #
 
 all:
-	g++ -g -lgtest -lglog -lpthread -std=c++11 -o test_main test_main.cpp parsers_test.cpp type_ops_test.cpp table_test.cpp
+	g++ -g -lgtest -lglog -lpthread -std=c++11 -o test_main test/test_main.cpp test/parsers_test.cpp test/type_ops_test.cpp test/table_test.cpp
+	g++ -c test/trait_test.cpp
 
 # vim:ft=make
 #
+example:
+	g++ -g -std=c++11 -o example -L./ demo/easy_table_example.cpp
+
+clean:
+	rm example
